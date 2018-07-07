@@ -1,0 +1,9 @@
+<h2>Bienvenido crea tu cuenta:</h2>
+
+<form action="/invitation" method="post">
+    <input value="{{user.email}}" type="text" name="email" placeholder="Tu email">
+    <input type="password" name="password" placeholder="Tu Password">
+    <input type="password" name="password2" placeholder="Repite tu Password">
+    <input name="token" type="hidden" value="{{token}}">
+    <input type="submit">
+</form>
