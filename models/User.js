@@ -13,7 +13,12 @@ const userSchema = new Schema({
         type:Boolean,
         default:false
     },
-    tokenToActive: String
+    tokenToActive: String,
+    role: {
+	type:String,
+	enum:['admin', 'user'],
+	default:'admin'
+}
 },{
     timestamps:{
         createdAt: 'created_at',
