@@ -15,10 +15,10 @@ const userSchema = new Schema({
     },
     tokenToActive: String,
     role: {
-	type:String,
-	enum:['admin', 'user'],
-	default:'admin'
-}
+	    type:String,
+	    enum:['admin', 'user'],
+	    default:'admin'
+    }
 },{
     timestamps:{
         createdAt: 'created_at',

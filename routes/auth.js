@@ -4,9 +4,6 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const expressjwt = require('express-jwt');
 const sendInvitation = require('../helpers/signInInvitation').sendInvitation;
-// router.get('*', (req,res)=>{
-//     res.sendStatus(404);
-// })
 
 //token middleware
 //with no Bearer !!
@@ -42,8 +39,6 @@ function jwtBliss(req, res, next) {
     }
   }
 
-//router.use(jwtBliss);
-
 router.get('/invitation', (req,res, next)=>{
     const token = req.query.token;
     if(!token) res.redirect('/');
@@ -52,8 +47,7 @@ router.get('/invitation', (req,res, next)=>{
         if(!user || user.active) return res.redirect('/');
         res.render('activate', {token, user})
     })
-    .catch(e=>next(e));
-    
+    .catch(e=>next(e));    
 })
 
 router.post('/invitation', (req,res,next)=>{
@@ -107,7 +101,5 @@ const jwtCheck = expressjwt({
 router.get('/protected', jwtBliss, (req,res)=>{
     res.send('protected');
 });
-
-
 
 module.exports = router;
