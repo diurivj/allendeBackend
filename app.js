@@ -13,7 +13,7 @@ require('dotenv').config();
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://diuri:diuri@allendeback-shard-00-00-od8n8.mongodb.net:27017,allendeback-shard-00-01-od8n8.mongodb.net:27017,allendeback-shard-00-02-od8n8.mongodb.net:27017/test?ssl=true&replicaSet=allendeBack-shard-0&authSource=admin&retryWrites=true', {useMongoClient: true})
+  .connect('mongodb://diuri:diuri@allendeback-shard-00-00-od8n8.mongodb.net:27017,allendeback-shard-00-01-od8n8.mongodb.net:27017,allendeback-shard-00-02-od8n8.mongodb.net:27017/users?ssl=true&replicaSet=allendeBack-shard-0&authSource=admin&retryWrites=true', {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
