@@ -6,18 +6,18 @@ const userSchema = new Schema({
     username:String,
     email:{
         type: String,
-        required:true
+        required: true
     },
     photoURL:String,
     active: {
-        type:Boolean,
-        default:false
+        type: Boolean,
+        default: false
     },
     tokenToActive: String,
     role: {
 	    type:String,
 	    enum:['admin', 'user'],
-	    default:'admin'
+	    default:'user'
     }
 },{
     timestamps:{

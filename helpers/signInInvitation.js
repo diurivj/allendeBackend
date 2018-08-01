@@ -8,8 +8,8 @@ const transporter = nodemailer.createTransport({
     //secure: true, // true for 465, false for other ports
     service: 'gmail',
     auth: {
-        user: 'diurivj@gmail.com', // generated ethereal user
-        pass: 'Aloneinthe7heavens.' // generated ethereal password
+        user: 'fixtermailer@gmail.com', // generated ethereal user
+        pass: 'Pedorra90.' // generated ethereal password
     }
 });
 

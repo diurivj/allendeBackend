@@ -84,6 +84,7 @@ router.post('/signup', (req,res,next)=>{
 });
 
 router.post('/login', passport.authenticate('local'), (req,res,next)=>{
+    const user = req.user;
     const token = jwt.sign({
         sub: req.user._id,
         username: req.user.email
@@ -91,7 +92,7 @@ router.post('/login', passport.authenticate('local'), (req,res,next)=>{
     "bliss", 
     //{expiresIn:"3 hours"} //si no lo pones no expira
 );
-    res.send({access_token: token});
+    res.send({user, access_token: token});
 });
 
 const jwtCheck = expressjwt({
