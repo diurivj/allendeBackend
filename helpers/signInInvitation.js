@@ -33,7 +33,7 @@ function genToken(user){
 );
     mailOptions.html = `
         <b>Da click aquí para crear tu session: </b>
-        <a href="http://localhost:3000/invitation?token=${token}"> ${token} </a>
+        <a href="https://stark-fortress-68174.herokuapp.com/invitation?token=${token}"> ${token} </a>
         `;
     mailOptions.to = user.email;
     User.findByIdAndUpdate(user._id, {tokenToActive:token})
