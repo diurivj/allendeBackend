@@ -31,7 +31,7 @@ function genToken(user){
     "bliss", 
     {expiresIn:"72 hours"} //si no lo pones no expira
 );
-    mailOptions.html = `
+    mailOptions.html = `    
         <b>Da click aquí para crear tu session: </b>
         <a href="https://localhost:3000/invitation?token=${token}"> Puchame </a>
         `;
