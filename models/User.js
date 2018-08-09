@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
-    username:String,
     email:{
         type: String,
         required: true
@@ -18,6 +17,60 @@ const userSchema = new Schema({
 	    type:String,
 	    enum:['admin', 'user'],
 	    default:'user'
+    },
+    phoneNumber:{
+        type: String,
+        required: true,
+        default:'Aqui va tu telefono'
+    },
+    contactName:{
+        type: String,
+        required: true,
+        default:'Nombre de Contacto'
+    },
+    QRCode:{
+        type: String,
+        required: true,
+        default:'Codigo QR'
+    },
+    creditAmount:{
+        type: Number,
+        required: true,
+        default:0
+    },
+    creditDays:{
+        type: Number,
+        required: true,
+        default:0
+    },
+    discount:{
+        type: Number,
+        required: true,
+        default:0
+    },
+    RFC:{
+        type: String,
+        required: true
+        ,
+        default:'Aqui va el RFC'
+    },
+    razonSocial:{
+        type: String,
+        required: true,
+        default:'Aqui va la Razon Social'
+    },
+    address:{
+        type: String,
+        required: true,
+        default:'Aqui va la Direccion'
+    },
+    products:{
+        type:Schema.Types.ObjectId,
+        ref:'Product'
+    },
+    order:{
+        type:Schema.Types.ObjectId,
+        ref:'Order'
     }
 },{
     timestamps:{
