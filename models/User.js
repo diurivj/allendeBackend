@@ -48,7 +48,7 @@ const userSchema = new Schema({
         required: true,
         default:0
     },
-    RFC:{
+    rfc:{
         type: String,
         required: true
         ,
