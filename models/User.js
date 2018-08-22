@@ -7,7 +7,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    photoURL:String,
     active: {
         type: Boolean,
         default: false
@@ -61,8 +60,17 @@ const userSchema = new Schema({
     },
     address:{
         type: String,
+        required: false,
+        default:'Aqui va la Direccion'
+    },
+    addressFiscal:{
+        type: String,
         required: true,
         default:'Aqui va la Direccion'
+    },
+    area:{
+        type:String,
+        required:false
     },
     products:{
         type:Schema.Types.ObjectId,
@@ -71,6 +79,10 @@ const userSchema = new Schema({
     order:{
         type:Schema.Types.ObjectId,
         ref:'Order'
+    },
+    clients:{
+        type:Schema.Types.ObjectId,
+        ref:'Client'
     }
 },{
     timestamps:{
