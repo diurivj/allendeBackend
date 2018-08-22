@@ -1,16 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const productSchema = new Schema({
-  id: {
-    type: String,
-    required: true
-  },
-  total: {
+const OrderClientSchema = new Schema({
+  name: {
     type: Number,
     required: true
   },
-  stock: {
+  rfc: {
     type: Number,
     required: true
   },
@@ -19,6 +15,16 @@ const productSchema = new Schema({
     enum:['pending', 'delivered','on-road'],
     default:'pending'
   },
+  deliveryDate:{
+
+  },
+  quote:{
+
+  },
+  total:{
+
+  }
+  
 
 },{
   timestamps: {
@@ -27,4 +33,4 @@ const productSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model('OrderClient', OrderClientSchema);

@@ -22,7 +22,8 @@ const productSchema = new Schema({
     type: String,
     required: true,
     default: 'https://s3.amazonaws.com/kichink/items_678473_246443_20150703134308_b.jpg'
-  }
+  },
+  
 },{
   timestamps: {
     createdAt: 'created_at',

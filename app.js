@@ -12,7 +12,7 @@ require('dotenv').config();
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://diuri:diuri@allendeback-shard-00-00-od8n8.mongodb.net:27017,allendeback-shard-00-01-od8n8.mongodb.net:27017,allendeback-shard-00-02-od8n8.mongodb.net:27017/allende?ssl=true&replicaSet=allendeBack-shard-0&authSource=admin&retryWrites=true', {useMongoClient: true})
+  .connect('mongodb://zonanabeto:beto@clusterz-shard-00-00-htlnp.mongodb.net:27017,clusterz-shard-00-01-htlnp.mongodb.net:27017,clusterz-shard-00-02-htlnp.mongodb.net:27017/allende?ssl=true&replicaSet=ClusterZ-shard-0&authSource=admin&retryWrites=true', {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -49,8 +49,10 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const index    = require('./routes/index');
 const auth     = require('./routes/auth');
 const products = require('./routes/products');
+const distribuidores = require('./routes/dist')
 app.use('/', index);
 app.use('/', auth);
 app.use('/', products);
+app.use('/', distribuidores);
 
 module.exports = app;
